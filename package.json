@@ -1,0 +1,33 @@
+{
+  "name": "lar",
+  "version": "1.0.0",
+  "description": "Front-end da busca avançada da Lar Imóveis",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \\\"teste\\\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/GuiHarrison/LarBuscaAvancada.git"
+  },
+  "keywords": [
+    "Lar",
+    "Imóvies",
+    "Busca",
+    "avançada",
+    "Advanced",
+    "search",
+    "realstate"
+  ],
+  "author": "GuiHarrison",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GuiHarrison/LarBuscaAvancada/issues"
+  },
+  "homepage": "https://github.com/GuiHarrison/LarBuscaAvancada",
+  "devDependencies": {
+    "browser-sync": "^2.18.12",
+    "gulp": "^3.9.1",
+    "gulp-sass": "^3.1.0"
+  }
+}
