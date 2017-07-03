@@ -12,7 +12,9 @@ $(function() {
 	'use strict';
 	
 	var $baFiltro = $('.div-coluna.filtro'),
-		$barra = $('.img-barra');
+		$barra = $('#barra1')[0],
+		$precoMin = $('#field-3'),
+		$precoMax = $('#field-4');
 	
 	$baFiltro.on('click', function() {
 		var $thisList = $(this).find('.droplist'),
@@ -34,12 +36,19 @@ $(function() {
 		}
 	});
 
-	noUiSlider.create($barra[0], {
-		start: [0, 100],
+	noUiSlider.create($barra, {
+		start: [80000, 1000000],
+		connect: [false, true, false],
+		step: 1000,
 		range: {
-			'min': [20],
-			'max': [80]
+			'min': [0],
+			'max': [1000000]
 		}
+	});
+
+	$barra.noUiSlider.on('update', function() {
+		$precoMin.val( $barra.noUiSlider.get()[0] );
+		$precoMax.val( $barra.noUiSlider.get()[1] );
 	});
 
 	$('.link-block-2').on('click', function(event) {
