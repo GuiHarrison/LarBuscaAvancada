@@ -12,9 +12,12 @@ $(function() {
 	'use strict';
 	
 	var $baFiltro = $('.div-coluna.filtro'),
-		$barra = $('#barra1')[0],
-		$precoMin = $('#field-3'),
-		$precoMax = $('#field-4');
+		$barra1 = $('#barra1')[0],
+		$barra2 = $('#barra2')[0],
+		$precoMin1 = $('#field-3'),
+		$precoMax1 = $('#field-4'),
+		$precoMin2 = $('#field-5'),
+		$precoMax2 = $('#field-6');
 	
 	$baFiltro.on('click', function() {
 		var $thisList = $(this).find('.droplist'),
@@ -36,9 +39,10 @@ $(function() {
 		}
 	});
 
-	noUiSlider.create($barra, {
-		start: [80000, 1000000],
+	noUiSlider.create($barra1, {
+		start: [100000, 1000000],
 		connect: [false, true, false],
+		behaviour: 'tap-drag',
 		step: 1000,
 		range: {
 			'min': [0],
@@ -46,9 +50,64 @@ $(function() {
 		}
 	});
 
-	$barra.noUiSlider.on('update', function() {
-		$precoMin.val( $barra.noUiSlider.get()[0] );
-		$precoMax.val( $barra.noUiSlider.get()[1] );
+	noUiSlider.create($barra2, {
+		start: [30, 3000],
+		connect: [false, true, false],
+		behaviour: 'tap-drag',
+		step: 5,
+		range: {
+			'min': [0],
+			'max': [3000]
+		}
+	});
+
+	// atualizar o input quando arrastar o slider
+	$barra1.noUiSlider.on('slide', function() {
+		$precoMin1.val( $barra1.noUiSlider.get()[0] );
+		$precoMax1.val( $barra1.noUiSlider.get()[1] );
+	});
+
+	$barra2.noUiSlider.on('slide', function() {
+		$precoMin2.val( $barra2.noUiSlider.get()[0] );
+		$precoMax2.val( $barra2.noUiSlider.get()[1] );
+	});
+
+	// atualizar a barra quando digitar no campo
+	$precoMin1.keypress(function(e) {
+		$barra1.noUiSlider.set([$(this).val(), null]);
+	});
+	$precoMax1.keypress(function(e) {
+		$barra1.noUiSlider.set([null, $(this).val()]);
+	});
+
+	$precoMin2.keypress(function(e) {
+		$barra2.noUiSlider.set([$(this).val(), null]);
+	});
+	$precoMax2.keypress(function(e) {
+		$barra2.noUiSlider.set([null, $(this).val()]);
+	});
+
+	// impedir que o usuário coloque um valor máximo mais baixo que o valor mínimo
+	$precoMax1.focusout(function() {
+		if ($precoMax1.val() - $precoMin1.val() <= 0) {
+			$precoMax1.val( $precoMin1.val() + 10000 );
+		}
+	});
+
+	$('#oqDeseja').selectize({
+	    delimiter: ',',
+	    persist: false,
+	    create: function(input) {
+	        return {
+	            value: input,
+	            text: input
+	        }
+	    },
+	    render: {
+            option_create: function (data, escape) {
+                return '<div class="create">Um(a) <strong>' + escape(data.input) + '</strong>&hellip;</div>';
+            }
+        }
 	});
 
 	$('.link-block-2').on('click', function(event) {
