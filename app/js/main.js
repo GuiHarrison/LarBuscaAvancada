@@ -11,7 +11,8 @@ Webflow.require('ix').init([
 $(function() {
 	'use strict';
 	
-	var $baFiltro = $('.div-coluna.filtro');
+	var $baFiltro = $('.div-coluna.filtro'),
+		$barra = $('.img-barra');
 	
 	$baFiltro.on('click', function() {
 		var $thisList = $(this).find('.droplist'),
@@ -20,7 +21,7 @@ $(function() {
 		$(this).siblings().removeClass('w--open');
 		$(this).siblings().find('.droplist').removeClass('w--open');
 		
-		if ( !$(event.target).hasClass('droplist') && !$(event.target).is('input') && $(this).hasClass('w--open') ) {
+		if ( !$(event.target).hasClass('droplist') && !$(event.target).is('input') && !$(event.target).hasClass('noUi-target') && !$(event.target).closest('.noUi-target').length && $(this).hasClass('w--open') ) {
 			
 			$(this).removeClass('w--open');
 			$thisList.removeClass('w--open');
@@ -31,5 +32,19 @@ $(function() {
 			$thisList.addClass('w--open');
 			
 		}
+	});
+
+	noUiSlider.create($barra[0], {
+		start: [0, 100],
+		range: {
+			'min': [20],
+			'max': [80]
+		}
+	});
+
+	$('.link-block-2').on('click', function(event) {
+		event.preventDefault();
+		
+		$('#email-form')[0].reset();
 	});
 });
