@@ -47,25 +47,53 @@
 .div-botoes {
   width: 300px;
   height: auto;
-}
 
-.botao-comprar {
-  width: 150px;
-  height: auto;
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
-  background-color: #921d22;
-  font-family: Lato, sans-serif;
-  font-size: 16px;
-  font-weight: 300;
-  text-align: center;
-  text-transform: uppercase;
+  .botao-comprar {
+    width: 150px;
+    height: auto;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    background-color: #fff;
+    color: #921d22;
+    font-family: Lato, sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    text-align: center;
+    text-transform: uppercase;
+    float: left;
+
+    &:hover {
+      background-color: #921d22;
+      color: #fff;
+    }
+
+    &.ativo {
+      color: #fff;
+      background-color: #921d22;
+      background-image: -moz-linear-gradient(top, #921d22, #700001);
+      background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#921d22), to(#700001));
+      background-image: -webkit-linear-gradient(top, #921d22, #700001);
+      background-image: -o-linear-gradient(top, #921d22, #700001);
+      background-image: linear-gradient(to bottom, #921d22, #700001);
+      background-repeat: repeat-x;
+    }
+  }
+
+  @media screen and (max-width: 991px) {
+    width: auto;
+
+    .botao-comprar {
+      width: 50%;
+      float: left;
+    }
+  }
 }
 
 .botao-comprar.alugar {
   border-radius: 0px 5px 5px 0px;
   background-color: #fff;
   color: #921d22;
+  border-left: solid 1px #D3D3D3;
 }
 
 .botao-alugar {
@@ -111,6 +139,12 @@
   border-bottom: 2px solid #5a0004;
   border-radius: 5px;
   background-color: #921d22;
+
+  @media screen and (max-width: 991px) {
+    float: none;
+    margin: 0 auto;
+    display: block;
+  }
 }
 
 .campo-bairro {
@@ -122,11 +156,11 @@
   color: #921d22;
 }
 
-.busca-avanada {
-  margin-top: 10px;
-  margin-right: 10px;
-  float: right;
-}
+// .busca-avanada {
+//   margin-top: 10px;
+//   margin-right: 10px;
+//   float: right;
+// }
 
 .busca-avancada {
   position: relative;
@@ -138,6 +172,31 @@
   font-size: 16px;
   font-weight: 300;
   text-decoration: none;
+
+  div {
+    float: left;
+    margin-right: 5px;
+  }
+
+  .w-icon-dropdown-toggle {
+    margin-top: 5px;
+  }  
+
+  @media screen and (max-width: 991px) {
+    display: block;
+    float: none;
+    width: 100%;
+    clear: both;
+    text-align: center;
+    font-size: 20px;
+    margin-top: 20px;
+    padding: 10px;
+
+    div {
+      float: none;
+      margin: 0;
+    }
+  }
 }
 
 .busca-avancada.resultdos {
@@ -148,6 +207,7 @@
 
 .busca-avancada.resultdos.limpar-filtros {
   font-weight: 400;
+  text-align: left !important;
 }
 
 .icon {
@@ -168,6 +228,12 @@
   float: left;
   border-right: 1px solid hsla(0, 0%, 100%, .4);
   text-align: center;
+
+  @media screen and (max-width: 991px) {
+    img {
+      display: none;
+    }
+  }
 }
 
 .div-coluna.final {
@@ -186,6 +252,10 @@
 .dropdown-toggle {
   margin-top: 5px;
   padding: 10px 48px 10px 5px;
+
+  @media screen and (max-width: 991px) {
+    padding: 10px 5px;
+  }
 }
 
 .dropdown-toggle.w--open {
@@ -228,7 +298,7 @@
 .droplist.w--open {
   border-bottom-left-radius: 2px;
   border-bottom-right-radius: 2px;
-  background-color: hsla(0, 0%, 100%, .89);
+  background-color: #fff;
 }
 
 .droplist.preco.w--open {
@@ -237,7 +307,7 @@
   width: 250px;
   border-bottom-left-radius: 3px;
   border-bottom-right-radius: 3px;
-  background-color: hsla(0, 0%, 100%, .89);
+  background-color: #fff;
 }
 
 .droplist.preco.area.w--open {
@@ -465,8 +535,13 @@
 }
 
 .image-3 {
-  margin-top: 8px;
+  margin-top: -2px;
+  margin-right: 10px;
   float: left;
+
+  @media screen and (max-width: 991px) {
+    display: none;
+  }
 }
 
 .link-block-2 {
@@ -479,6 +554,23 @@
 
 .filtro {
 	cursor: pointer;
+
+  @media screen and (max-width: 991px) {
+    width: 50%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+
+    &:hover {
+      background-color: #921d22;
+    }
+
+    &:nth-child(2n) {
+      border-right: none;
+    }
+
+    &:last-child {
+      width: 100%;
+    }
+  }
 
   // &.w--open {
   //   background-color: brown;

@@ -321,7 +321,7 @@ label {
   margin-bottom: 10px;
   font-size: 14px;
   line-height: 1.428571429;
-  color: #333333;
+  color: #921d22;
   vertical-align: middle;
   background-color: #ffffff;
   border: 1px solid #cccccc;
@@ -941,7 +941,6 @@ textarea.w-select {
   text-align: left;
   margin-left: auto;
   margin-right: auto;
-  z-index: 900;
 }
 .w-dropdown-btn,
 .w-dropdown-toggle,
@@ -977,6 +976,10 @@ textarea.w-select {
   margin-right: 20px;
   width: 1em;
   height: 1em;
+
+  @media screen and (max-width: 991px) {
+    display: none;
+  }
 }
 .w-dropdown-list {
   position: absolute;
@@ -986,6 +989,7 @@ textarea.w-select {
 }
 .w-dropdown-list.w--open {
   display: block;
+  z-index: 900;
 }
 .w-dropdown-link {
   padding: 10px 20px;
