@@ -24,6 +24,20 @@
   border-style: none;
   border-radius: 8px;
   background-color: rgba(0, 0, 0, .5);
+
+  @media screen and (max-width: 991px) {
+    width: 96%;
+    margin: auto;
+    background-color: rgba(0,0,0,.8);
+    padding-top: 20px;
+  }
+}
+
+.colunas-form1 {
+
+  &>div {
+    margin-bottom: 10px;
+  }
 }
 
 .h1-home {
@@ -33,6 +47,10 @@
   color: #fff;
   font-weight: 400;
   text-align: center;
+
+  @media screen and (max-width: 991px) {
+    margin-top: 20px;
+  }
 }
 
 .h2-home {
@@ -243,10 +261,26 @@
 .div-busca-avancada1 {
   height: 50px;
   margin-top: 10px;
+
+  @media screen and (max-width: 991px) {
+    height: auto;
+    border: 2px solid rgba(255,255,255,0.4);
+    border-radius: 5px;
+  }
 }
 
 .colunas-busca-avancada2 {
   margin-top: 30px;
+
+  &>div {
+    margin-bottom: 20px;
+  }
+}
+
+.dropdown, .drop {
+  position: static;
+  width: 100%;
+  text-align: center;
 }
 
 .dropdown-toggle {
@@ -299,6 +333,8 @@
   border-bottom-left-radius: 2px;
   border-bottom-right-radius: 2px;
   background-color: #fff;
+  width: calc( 50% - 2px );
+  min-width: 100px;
 }
 
 .droplist.preco.w--open {
@@ -308,6 +344,11 @@
   border-bottom-left-radius: 3px;
   border-bottom-right-radius: 3px;
   background-color: #fff;
+
+  @media screen and (max-width: 480px) {
+    width: 100%;
+    left: 0;
+  }
 }
 
 .droplist.preco.area.w--open {
@@ -323,6 +364,7 @@
   font-family: Lato, sans-serif;
   font-weight: 400;
   color: #921d22;
+  text-align: left;
 }
 
 .field-label-3 {
@@ -350,6 +392,10 @@
   color: #fff;
   font-weight: 300;
   text-align: center;
+
+  @media screen and (max-width: 479px) {
+    display: none;
+  }
 }
 
 .abadrop {
@@ -430,6 +476,10 @@
   position: static;
   overflow: hidden;
   height: 0px;
+
+  @media screen and (max-width: 991px) {
+    position: relative;
+  }
 }
 
 .div-block {
@@ -569,6 +619,7 @@
 
     &:last-child {
       width: 100%;
+      border-bottom: none;
     }
   }
 
