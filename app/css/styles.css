@@ -2232,7 +2232,7 @@ textarea.w-select {
     display: none; }
 
 div#barra1, div#barra2 {
-  height: 8px;
+  height: 10px;
   border: 1px solid #D3D3D3;
   margin: 30px 20px 20px;
   width: calc(100% - 40px); }
@@ -2669,7 +2669,6 @@ div#barra1, div#barra2 {
   margin-bottom: 10px; }
 
 .h1-home {
-  margin-top: 100px;
   margin-bottom: 5px;
   font-family: Lato, sans-serif;
   color: #fff;
@@ -2742,11 +2741,9 @@ div#barra1, div#barra2 {
   color: #fff;
   font-weight: 300; }
 
-.div-banner {
-  margin-top: 150px; }
-  @media screen and (max-width: 991px) {
-    .div-banner {
-      margin-top: 20px; } }
+@media screen and (max-width: 991px) {
+  .div-banner {
+    margin-top: 20px; } }
 
 .form-pesquisa {
   margin-bottom: 0px; }
@@ -2804,8 +2801,8 @@ div#barra1, div#barra2 {
       clear: both;
       text-align: center;
       font-size: 20px;
-      margin-top: 20px;
-      padding: 10px; }
+      margin: 0 0 20px 0;
+      padding: 5px; }
       .busca-avancada div {
         float: none;
         margin: 0; } }
@@ -2814,12 +2811,22 @@ div#barra1, div#barra2 {
   margin-top: 10px;
   margin-left: 5px;
   font-size: 14px; }
+  @media screen and (max-width: 991px) {
+    .busca-avancada.resultdos {
+      margin-bottom: 0; } }
 
-.busca-avancada.resultdos.limpar-filtros {
+.limpar-filtros {
+  margin-top: 33px;
   font-weight: 400;
-  text-align: left !important; }
+  text-align: right !important;
+  color: #fff;
+  text-decoration: none;
+  float: right;
+  width: 33.333%; }
+  .limpar-filtros img, .limpar-filtros div {
+    display: inline; }
 
-.icon {
+.ba-icon {
   position: static;
   margin-top: 10px;
   float: right;
@@ -3117,14 +3124,12 @@ div#barra1, div#barra2 {
 
 .image-3 {
   margin-top: -2px;
+  margin-left: 10px;
   margin-right: 10px;
-  float: left; }
+  float: right; }
   @media screen and (max-width: 991px) {
     .image-3 {
       display: none; } }
-
-.link-block-2 {
-  margin-top: 20px; }
 
 .hidden {
   display: none; }
