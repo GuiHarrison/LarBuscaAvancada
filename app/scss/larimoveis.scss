@@ -25,6 +25,7 @@
   border-style: none;
   border-radius: 8px;
   background-color: rgba(0, 0, 0, .5);
+  position: relative;
 
   @media screen and (max-width: 991px) {
     width: 96%;
@@ -64,11 +65,10 @@
 }
 
 .div-botoes {
-  width: 300px;
   height: auto;
 
   .botao-comprar {
-    width: 150px;
+    width: 50%;
     height: auto;
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
@@ -153,7 +153,8 @@
 }
 
 .submit-button {
-  position: static;
+  position: absolute;
+  right: 10px;
   margin-top: -5px;
   padding-right: 40px;
   padding-left: 40px;
@@ -167,6 +168,9 @@
     float: none;
     margin: 0 auto;
     display: block;
+
+    position: static;
+    right: auto;
   }
 }
 
@@ -185,6 +189,14 @@
 //   float: right;
 // }
 
+a.link-block.w-clearfix.w-inline-block.busca-avancada {
+  margin-right: 145px;
+
+  @media screen and (max-width: 991px) {
+    margin-right: 0 !important;
+  }
+}
+
 .busca-avancada {
   position: relative;
   margin-top: 5px;
@@ -195,6 +207,10 @@
   font-size: 16px;
   font-weight: 300;
   text-decoration: none;
+
+  &:hover, &:active {
+    color: #fff
+  }
 
   div {
     float: left;
@@ -244,6 +260,11 @@
   img, div {
     display: inline;
   }
+
+  @media screen and (max-width: 991px) {
+    width: 100%;
+    margin-top: 0;
+  }
 }
 
 .ba-icon {
@@ -267,7 +288,9 @@
 
   @media screen and (max-width: 991px) {
     img {
-      display: none;
+      // display: none;
+      margin: 10px auto -10px;
+      float: none;
     }
   }
 }
@@ -292,6 +315,10 @@
 
   &>div {
     margin-bottom: 20px;
+
+    @media screen and (max-width: 991px) {
+      margin-bottom: 0;
+    }
   }
 }
 
@@ -429,6 +456,10 @@
   top: -14px;
   display: block;
   overflow: visible;
+
+  @media screen and (max-width: 991px) {
+    display: none;
+  }
 }
 
 /*.abadrop.ii {
@@ -615,7 +646,7 @@
   float: right;
 
   @media screen and (max-width: 991px) {
-    display: none;
+    // display: none;
   }
 }
 
@@ -647,4 +678,9 @@
   // &.w--open {
   //   background-color: brown;
   // }
+}
+
+button.multiselect.dropdown-toggle.btn.btn-default {
+  margin-top: 0;
+  width: 100%;
 }
