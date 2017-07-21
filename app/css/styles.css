@@ -1291,7 +1291,7 @@ textarea.w-select {
   height: 1em; }
   @media screen and (max-width: 991px) {
     .w-icon-dropdown-toggle {
-      display: none; } }
+      display: inline-block; } }
 
 .w-dropdown-list {
   position: absolute;

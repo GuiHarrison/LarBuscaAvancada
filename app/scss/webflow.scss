@@ -978,7 +978,7 @@ textarea.w-select {
   height: 1em;
 
   @media screen and (max-width: 991px) {
-    display: none;
+    display: inline-block;
   }
 }
 .w-dropdown-list {
